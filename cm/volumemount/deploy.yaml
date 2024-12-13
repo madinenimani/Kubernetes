@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: first-deployment
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      d: dev
+  template:
+    metadata:
+      labels:
+        d: dev
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        volumeMounts:
+        - name: first-volume
+          mountPath: /app
+      volumes:
+      - name: first-volume
+        configMap:
+          name: first-cm
+
