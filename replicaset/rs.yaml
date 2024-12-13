@@ -15,5 +15,5 @@ spec:
     spec:
       containers:
       - name: first-cont-rs
-        image: nginx
+        image: httpd
   
