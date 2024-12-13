@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multi-continer-pod
+spec:
+  nodeName: ip-192-168-61-32.ap-south-1.compute.internal
+  containers:
+  - name: first-container
+    image: nginx
+  - name: second-container
+    image: tomcat:8
